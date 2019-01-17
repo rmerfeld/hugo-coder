@@ -5,6 +5,14 @@
     {{ end }}
     <h1>{{ .Site.Params.author }}</h1>
     <h2>{{ .Site.Params.info }}</h2>
+    
+    {{ with .Site.Params.quote }}
+    <blockquote class="groucho">
+      {{.content}}
+      <footer>{{.author}}</footer>
+    </blockquote>
+    {{ end }}
+
     {{ with .Site.Params.social }}
     <ul>
       {{ range sort .}}
